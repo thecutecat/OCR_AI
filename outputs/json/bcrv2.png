@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 4.065656571929161,
+  "processing_time_ms": 784.7404479980469,
+  "ocr_confidence": 0.6572727272727273,
+  "image_width": 417,
+  "image_height": 282,
+  "fields": {
+    "name": "ODENQUEST",
+    "company": "STUDI0 ICONIc",
+    "email": "",
+    "phone": "084567899"
+  },
+  "timestamp": "2026-06-27T01:39:11.478893",
+  "document_id": "94d6cc07-860b-4dee-bde8-6c7924ee4ccc",
+  "document_type": "business_card"
+}

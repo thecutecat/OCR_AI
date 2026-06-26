@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 0.30845343735899483,
+  "processing_time_ms": 1341.0601615905762,
+  "ocr_confidence": 0.7611111111111112,
+  "image_width": 785,
+  "image_height": 517,
+  "fields": {
+    "name": "a . pain",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T22:56:10.687918",
+  "document_id": "102a0e39-e03e-4e89-8f5d-0b0c6bd9dad8",
+  "document_type": "business_card"
+}

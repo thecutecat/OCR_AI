@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -1.6180945327374552,
+  "processing_time_ms": 1860.0952625274658,
+  "ocr_confidence": 0.7572727272727273,
+  "image_width": 1200,
+  "image_height": 800,
+  "fields": {
+    "name": "JohnDoe",
+    "company": "ABCCorporation",
+    "email": "john.doe@abccorp.com",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T22:53:48.702283",
+  "document_id": "ada7b081-7a97-435c-b238-7a947ed75885",
+  "document_type": "business_card"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "success": false,
+    "error": "No document detected",
+    "processing_time_ms": 62.77132034301758
+  },
+  {
+    "success": false,
+    "error": "No document detected",
+    "processing_time_ms": 13.568639755249023
+  },
+  {
+    "success": false,
+    "error": "No document detected",
+    "processing_time_ms": 21.1334228515625
+  }
+]

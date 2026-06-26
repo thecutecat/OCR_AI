@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -5.710593137499642,
+  "processing_time_ms": 738.7304306030273,
+  "ocr_confidence": 0.57,
+  "image_width": 370,
+  "image_height": 340,
+  "fields": {
+    "name": "Ue",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T19:59:28.345042",
+  "document_id": "9916f103-0e22-4c8f-82bd-40eb30de7f42",
+  "document_type": "business_card"
+}

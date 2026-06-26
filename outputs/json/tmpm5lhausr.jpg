@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 0.14043055093731335,
+  "processing_time_ms": 1129.41312789917,
+  "ocr_confidence": 0.9259999999999999,
+  "image_width": 800,
+  "image_height": 1200,
+  "fields": {
+    "name": "I PcL",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T18:41:44.197930",
+  "document_id": "7e192122-be96-4b9a-b97c-7f32a7087afd",
+  "document_type": "business_card"
+}

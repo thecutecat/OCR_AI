@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -3.885820075420881,
+  "processing_time_ms": 2348.0374813079834,
+  "ocr_confidence": 0.545,
+  "image_width": 1288,
+  "image_height": 723,
+  "fields": {
+    "name": "PRACTISED 1059",
+    "company": "examplewebsite.com S",
+    "email": "John@examole.com",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T23:58:41.171177",
+  "document_id": "325a16f6-688c-4db0-a4b0-7be86b15c626",
+  "document_type": "business_card"
+}

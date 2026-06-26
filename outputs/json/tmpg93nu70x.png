@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 0.07578802393764764,
+  "processing_time_ms": 6772.312164306641,
+  "ocr_confidence": 0.39144508670520234,
+  "image_width": 1953,
+  "image_height": 1518,
+  "fields": {
+    "name": "",
+    "company": "Meco Mk bcOnunissiuats",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T21:18:16.279945",
+  "document_id": "93aa2752-6160-464e-91cf-6ae968a29c04",
+  "document_type": "business_card"
+}

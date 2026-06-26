@@ -1,0 +1,273 @@
+[
+  {
+    "success": true,
+    "document_id": "aa92fb71-1879-4e00-b5c9-71eac386e13a",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -1.816607923344906,
+      "processing_time_ms": 2044.5382595062256,
+      "ocr_confidence": 0.33649999999999997,
+      "image_width": 1920,
+      "image_height": 1080,
+      "fields": {
+        "name": "ee",
+        "company": "examplewebsite.com 0",
+        "email": "John@example.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:46.141902",
+      "document_id": "aa92fb71-1879-4e00-b5c9-71eac386e13a",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "ee\neathg4 ag Let AdHSfih Leattesy Beate teil aE Weta\nAN Mi SAAT Hh ish ayer Unreal aes hy aN ned\nee\nTEAC ina Fey i in i at ren Wsealoakgtats Hin Tua\nINTERIORDESIGNER\n123-456-7890 @examplebusiness\nJohn@example.com 0 i\nexamplewebsite.com 0\n",
+      "structured_data": {
+        "name": "ee",
+        "company": "examplewebsite.com 0",
+        "email": "John@example.com",
+        "phone": ""
+      },
+      "confidence": 0.33649999999999997
+    },
+    "processing_time_ms": 2044.5382595062256,
+    "output_files": {
+      "debug": "outputs\\debug\\businesscard.jpg",
+      "corrected": "outputs\\processed\\businesscard_corrected.jpg",
+      "enhanced": "outputs\\processed\\businesscard_enhanced.jpg",
+      "json": "outputs\\json\\businesscard.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "5a2ca50c-1d49-42fb-916a-0e0b17f0162f",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -0.08488257421597964,
+      "processing_time_ms": 952.4192810058594,
+      "ocr_confidence": 0.8677777777777778,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDog",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:47.097324",
+      "document_id": "5a2ca50c-1d49-42fb-916a-0e0b17f0162f",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDog\nSeniorSoftwareEnginee Log\nABCCorporation\n\njohn.doe@abccorp.com\n+62-812-3406-7890\n",
+      "structured_data": {
+        "name": "JohnDog",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "confidence": 0.8677777777777778
+    },
+    "processing_time_ms": 952.4192810058594,
+    "output_files": {
+      "debug": "outputs\\debug\\business_card_low_light.jpg",
+      "corrected": "outputs\\processed\\business_card_low_light_corrected.jpg",
+      "enhanced": "outputs\\processed\\business_card_low_light_enhanced.jpg",
+      "json": "outputs\\json\\business_card_low_light.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "746f77b7-644e-4d79-9ae5-a20e335857c3",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -0.08488257421597964,
+      "processing_time_ms": 1152.118444442749,
+      "ocr_confidence": 0.39620689655172414,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDog a",
+        "company": "ABCCorporation -",
+        "email": "john.doe@abecor.car",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:48.253523",
+      "document_id": "746f77b7-644e-4d79-9ae5-a20e335857c3",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDog a\nSeniorSofiwareEngineer Logo\nABCCorporation -\njohn.doe@abecor.car\n162-812-3450-/890\n",
+      "structured_data": {
+        "name": "JohnDog a",
+        "company": "ABCCorporation -",
+        "email": "john.doe@abecor.car",
+        "phone": ""
+      },
+      "confidence": 0.39620689655172414
+    },
+    "processing_time_ms": 1152.118444442749,
+    "output_files": {
+      "debug": "outputs\\debug\\business_card_noisy.jpg",
+      "corrected": "outputs\\processed\\business_card_noisy_corrected.jpg",
+      "enhanced": "outputs\\processed\\business_card_noisy_enhanced.jpg",
+      "json": "outputs\\json\\business_card_noisy.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "e86fcea8-0c79-4fd8-b25b-49e9f80557db",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -0.08488257421597964,
+      "processing_time_ms": 930.1433563232422,
+      "ocr_confidence": 0.758,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:49.185103",
+      "document_id": "e86fcea8-0c79-4fd8-b25b-49e9f80557db",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDoe\nSeniorSoftwareEnginee Log\nABCCorporation\n\njohn.doe@abccorp.com\n+62-812-3456-7890\n",
+      "structured_data": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "confidence": 0.758
+    },
+    "processing_time_ms": 930.1433563232422,
+    "output_files": {
+      "debug": "outputs\\debug\\business_card_normal.jpg",
+      "corrected": "outputs\\processed\\business_card_normal_corrected.jpg",
+      "enhanced": "outputs\\processed\\business_card_normal_enhanced.jpg",
+      "json": "outputs\\json\\business_card_normal.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "734c871f-2d5b-4127-97f0-407114cab93d",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -1.6180945327374552,
+      "processing_time_ms": 1062.7424716949463,
+      "ocr_confidence": 0.86,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:50.249851",
+      "document_id": "734c871f-2d5b-4127-97f0-407114cab93d",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDoe\nSeniorSoftwareEngineer Logo\nABCCorporation\n\njohn.doe@abccorp.com\n+62-812-3456-7890\n",
+      "structured_data": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "confidence": 0.86
+    },
+    "processing_time_ms": 1062.7424716949463,
+    "output_files": {
+      "debug": "outputs\\debug\\business_card_perspective.jpg",
+      "corrected": "outputs\\processed\\business_card_perspective_corrected.jpg",
+      "enhanced": "outputs\\processed\\business_card_perspective_enhanced.jpg",
+      "json": "outputs\\json\\business_card_perspective.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "bf4e6a5b-e8b3-4801-ad9d-cf34f8393342",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": 0.14043055093731335,
+      "processing_time_ms": 851.0708808898926,
+      "ocr_confidence": 0.9259999999999999,
+      "image_width": 800,
+      "image_height": 1200,
+      "fields": {
+        "name": "I PcL",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:51.102926",
+      "document_id": "bf4e6a5b-e8b3-4801-ad9d-cf34f8393342",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "I PcL\n+ SO o 5\n8358 o\n2Bo8S\n22 96\nS@s2u\no@ 8265\nGS3 ro\na2 a5\n78FS\na6 m\n3\ntq\n3 @\nst\ne\n",
+      "structured_data": {
+        "name": "I PcL",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "confidence": 0.9259999999999999
+    },
+    "processing_time_ms": 851.0708808898926,
+    "output_files": {
+      "debug": "outputs\\debug\\business_card_rotated.jpg",
+      "corrected": "outputs\\processed\\business_card_rotated_corrected.jpg",
+      "enhanced": "outputs\\processed\\business_card_rotated_enhanced.jpg",
+      "json": "outputs\\json\\business_card_rotated.jpg"
+    }
+  },
+  {
+    "success": false,
+    "error": "No document detected",
+    "processing_time_ms": 50.618886947631836
+  },
+  {
+    "success": true,
+    "document_id": "71a4a3b6-d835-4b40-9930-d9336fe7c21d",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -3.7754658242898165,
+      "processing_time_ms": 1577.7466297149658,
+      "ocr_confidence": 0.5870000000000001,
+      "image_width": 1288,
+      "image_height": 723,
+      "fields": {
+        "name": "st i tai Oak a Ie ie i. ae",
+        "company": "exarnplewebsite.com 5 Q",
+        "email": "John@example.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-26T10:54:52.733707",
+      "document_id": "71a4a3b6-d835-4b40-9930-d9336fe7c21d",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "st i tai Oak a Ie ie i. ae\nme WAN et ee Pi et het ue Ent ee Ne\ncies vo rca\nINTERIOR DESIGNER\n123-456-7890 @examplebusiness\nJohn@example.com ps\nexarnplewebsite.com 5 Q\n",
+      "structured_data": {
+        "name": "st i tai Oak a Ie ie i. ae",
+        "company": "exarnplewebsite.com 5 Q",
+        "email": "John@example.com",
+        "phone": ""
+      },
+      "confidence": 0.5870000000000001
+    },
+    "processing_time_ms": 1577.7466297149658,
+    "output_files": {
+      "debug": "outputs\\debug\\businesscard.png",
+      "corrected": "outputs\\processed\\businesscard_corrected.png",
+      "enhanced": "outputs\\processed\\businesscard_enhanced.png",
+      "json": "outputs\\json\\businesscard.png"
+    }
+  }
+]

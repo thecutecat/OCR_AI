@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -29.822047283300048,
+  "processing_time_ms": 3475.092887878418,
+  "ocr_confidence": 0.95,
+  "image_width": 1435,
+  "image_height": 825,
+  "fields": {
+    "name": "oN",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T22:44:35.213112",
+  "document_id": "537d3ea1-0706-41d7-b7b7-d73765f2da04",
+  "document_type": "business_card"
+}

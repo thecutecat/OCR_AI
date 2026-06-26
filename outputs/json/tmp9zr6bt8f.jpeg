@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 7.739233287547901,
+  "processing_time_ms": 3089.517831802368,
+  "ocr_confidence": 0.4536764705882353,
+  "image_width": 1599,
+  "image_height": 1025,
+  "fields": {
+    "name": "SAnopuslint0.Shen",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T20:54:21.831753",
+  "document_id": "c2e67daa-0d20-490c-8651-371b0ea67f11",
+  "document_type": "business_card"
+}

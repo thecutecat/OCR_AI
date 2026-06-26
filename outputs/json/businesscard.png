@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -3.7754658242898165,
+  "processing_time_ms": 1679.5241832733154,
+  "ocr_confidence": 0.5870000000000001,
+  "image_width": 1288,
+  "image_height": 723,
+  "fields": {
+    "name": "st i tai Oak a Ie ie i. ae",
+    "company": "exarnplewebsite.com 5 Q",
+    "email": "John@example.com",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T18:35:00.598825",
+  "document_id": "1d0ae33b-024a-498a-b774-e56866f07614",
+  "document_type": "business_card"
+}

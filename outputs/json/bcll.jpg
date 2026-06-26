@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -0.08488257421597964,
+  "processing_time_ms": 988.3246421813965,
+  "ocr_confidence": 0.8677777777777778,
+  "image_width": 1200,
+  "image_height": 800,
+  "fields": {
+    "name": "JohnDog",
+    "company": "ABCCorporation",
+    "email": "john.doe@abccorp.com",
+    "phone": ""
+  },
+  "timestamp": "2026-06-26T18:34:51.716496",
+  "document_id": "877883bc-ce54-4311-bcd1-e6a5b06f9824",
+  "document_type": "business_card"
+}
