@@ -1,17 +1,17 @@
 {
   "document_detected": true,
   "rotation_angle": -0.08488257421597964,
-  "processing_time_ms": 1192.5911903381348,
-  "ocr_confidence": 0.39620689655172414,
+  "processing_time_ms": 971.7724323272705,
+  "ocr_confidence": 0.39176470588235296,
   "image_width": 1200,
   "image_height": 800,
   "fields": {
-    "name": "JohnDog a",
-    "company": "ABCCorporation -",
-    "email": "john.doe@abecor.car",
+    "name": "JohnDoe -",
+    "company": "ABCComoration 7",
+    "email": "john.coe@aoccorp.com",
     "phone": ""
   },
-  "timestamp": "2026-06-26T18:34:53.887920",
-  "document_id": "83e28d28-3888-4f9a-9f8f-6d18fc9d400b",
+  "timestamp": "2026-06-27T10:58:39.808357",
+  "document_id": "9f8f5254-57d9-47e4-91a1-3f4b11abcde8",
   "document_type": "business_card"
 }

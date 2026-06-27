@@ -1,0 +1,501 @@
+[
+  {
+    "success": true,
+    "document_id": "7e4b75f6-44f3-444b-a46d-fa588e71e0d4",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -0.16976477583573465,
+      "processing_time_ms": 959.9320888519287,
+      "ocr_confidence": 0.8233333333333333,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDog",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:37.972532",
+      "document_id": "7e4b75f6-44f3-444b-a46d-fa588e71e0d4",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDog\nSeniorSofwareEnginee Log\nABCCorporation\n\njohn.doe@abccorp.com\n+62-812-3456-/890\n",
+      "structured_data": {
+        "name": "JohnDog",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "confidence": 0.8233333333333333
+    },
+    "processing_time_ms": 959.9320888519287,
+    "output_files": {
+      "debug": "outputs\\debug\\bcll.jpg",
+      "corrected": "outputs\\processed\\bcll_corrected.jpg",
+      "enhanced": "outputs\\processed\\bcll_enhanced.jpg",
+      "json": "outputs\\json\\bcll.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "26a7ed3b-d7b5-4498-8dae-3e6e2770049f",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -0.16976477583573465,
+      "processing_time_ms": 860.2867126464844,
+      "ocr_confidence": 0.8245454545454546,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "jonn.doe@abecorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:38.835573",
+      "document_id": "26a7ed3b-d7b5-4498-8dae-3e6e2770049f",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDoe\nSeniorSoftwareEngineer Log\nABCCorporation\n\njonn.doe@abecorp.com\n+62-812-3456-7890\n",
+      "structured_data": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "jonn.doe@abecorp.com",
+        "phone": ""
+      },
+      "confidence": 0.8245454545454546
+    },
+    "processing_time_ms": 860.2867126464844,
+    "output_files": {
+      "debug": "outputs\\debug\\bcn.jpg",
+      "corrected": "outputs\\processed\\bcn_corrected.jpg",
+      "enhanced": "outputs\\processed\\bcn_enhanced.jpg",
+      "json": "outputs\\json\\bcn.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "9f8f5254-57d9-47e4-91a1-3f4b11abcde8",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -0.08488257421597964,
+      "processing_time_ms": 971.7724323272705,
+      "ocr_confidence": 0.39176470588235296,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDoe -",
+        "company": "ABCComoration 7",
+        "email": "john.coe@aoccorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:39.808357",
+      "document_id": "9f8f5254-57d9-47e4-91a1-3f4b11abcde8",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDoe -\nSeniorSoflwareEngineer Lge\nABCComoration 7\njohn.coe@aoccorp.com\n162-812-3400-7800\n",
+      "structured_data": {
+        "name": "JohnDoe -",
+        "company": "ABCComoration 7",
+        "email": "john.coe@aoccorp.com",
+        "phone": ""
+      },
+      "confidence": 0.39176470588235296
+    },
+    "processing_time_ms": 971.7724323272705,
+    "output_files": {
+      "debug": "outputs\\debug\\bcnoise.jpg",
+      "corrected": "outputs\\processed\\bcnoise_corrected.jpg",
+      "enhanced": "outputs\\processed\\bcnoise_enhanced.jpg",
+      "json": "outputs\\json\\bcnoise.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "5076c09c-d890-4dbb-b97d-62b499cf7009",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": 0.2808594146833859,
+      "processing_time_ms": 1009.1934204101562,
+      "ocr_confidence": 0.946,
+      "image_width": 800,
+      "image_height": 1200,
+      "fields": {
+        "name": "+SO3YS oOc",
+        "company": "CO o",
+        "email": "",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:40.820404",
+      "document_id": "5076c09c-d890-4dbb-b97d-62b499cf7009",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "+SO3YS oOc\nQS5B82@O\noo.2FDT\nSegso85\nNR o7\n@sU\nge@s2\na3@\n12S@\nCO o\noa mm\nof _\n2 a.\n3 D\n@\no\nas\nfo\n",
+      "structured_data": {
+        "name": "+SO3YS oOc",
+        "company": "CO o",
+        "email": "",
+        "phone": ""
+      },
+      "confidence": 0.946
+    },
+    "processing_time_ms": 1009.1934204101562,
+    "output_files": {
+      "debug": "outputs\\debug\\bcr.jpg",
+      "corrected": "outputs\\processed\\bcr_corrected.jpg",
+      "enhanced": "outputs\\processed\\bcr_enhanced.jpg",
+      "json": "outputs\\json\\bcr.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "2103f0f7-6525-4429-98e3-f778612ffc97",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -8.524766051905864,
+      "processing_time_ms": 2207.6754570007324,
+      "ocr_confidence": 0.7359375,
+      "image_width": 1920,
+      "image_height": 1080,
+      "fields": {
+        "name": "FASROPLOpePORELTON120ODACentae Wena EA ROE catident pun mht ie",
+        "company": "BSEamh aN My fy contrat eur ini i i a Sips TAN 481",
+        "email": "John@example.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:43.029079",
+      "document_id": "2103f0f7-6525-4429-98e3-f778612ffc97",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "FASROPLOpePORELTON120ODACentae Wena EA ROE catident pun mht ie\nrs 358 Oks SEARO an cae ay SUR laos eRe\noa eat Ween a\nRNY NS toe Seay esa rh rs ae NEN AS met SN a tas Re AN su\nWINES Aan Awahy Ae Ata HoaliaBs 4 t Mealy ri a epee Senn iNeed\nBSEamh aN My fy contrat eur ini i i a Sips TAN 481\naleCCLULAO V7 et Wet AM denise Yi ain INNS teeny Wr a\nalent SRA tbe Pion RENE A ey viens\nEEa ca ee ote\n_ Sie as a ee TR\nJ\nINTERIORDEsignen\n123-456-7890 @examplebusiness\n3 John@example.com Q 9 a\nexamplewebsite.com -\n",
+      "structured_data": {
+        "name": "FASROPLOpePORELTON120ODACentae Wena EA ROE catident pun mht ie",
+        "company": "BSEamh aN My fy contrat eur ini i i a Sips TAN 481",
+        "email": "John@example.com",
+        "phone": ""
+      },
+      "confidence": 0.7359375
+    },
+    "processing_time_ms": 2207.6754570007324,
+    "output_files": {
+      "debug": "outputs\\debug\\businesscard.jpg",
+      "corrected": "outputs\\processed\\businesscard_corrected.jpg",
+      "enhanced": "outputs\\processed\\businesscard_enhanced.jpg",
+      "json": "outputs\\json\\businesscard.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "1d579d84-b3f0-434f-bf18-45f04e9b552a",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -1.6180945327374552,
+      "processing_time_ms": 903.3501148223877,
+      "ocr_confidence": 0.7572727272727273,
+      "image_width": 1200,
+      "image_height": 800,
+      "fields": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:43.935529",
+      "document_id": "1d579d84-b3f0-434f-bf18-45f04e9b552a",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "JohnDoe\nSeniorSoftwareEngineer Logo\nABCCorporation\n\njohn.doe@abccorp.com\n+62-812-3456-/890\n",
+      "structured_data": {
+        "name": "JohnDoe",
+        "company": "ABCCorporation",
+        "email": "john.doe@abccorp.com",
+        "phone": ""
+      },
+      "confidence": 0.7572727272727273
+    },
+    "processing_time_ms": 903.3501148223877,
+    "output_files": {
+      "debug": "outputs\\debug\\business_card_perspective.jpg",
+      "corrected": "outputs\\processed\\business_card_perspective_corrected.jpg",
+      "enhanced": "outputs\\processed\\business_card_perspective_enhanced.jpg",
+      "json": "outputs\\json\\business_card_perspective.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "d4976608-55aa-46ac-94a4-2b8a9b19a888",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -3.7997782914165334,
+      "processing_time_ms": 1359.555721282959,
+      "ocr_confidence": 0.5882352941176471,
+      "image_width": 1225,
+      "image_height": 697,
+      "fields": {
+        "name": "ass ca ee ee",
+        "company": "examplewebsite.com fi 0 Q",
+        "email": "John@example.cor",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:45.297088",
+      "document_id": "d4976608-55aa-46ac-94a4-2b8a9b19a888",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "ass ca ee ee\nINTERIOR DESIGNER\n123-456-7890 @examplebusiness\nJohn@example.cor p\nexamplewebsite.com fi 0 Q\n",
+      "structured_data": {
+        "name": "ass ca ee ee",
+        "company": "examplewebsite.com fi 0 Q",
+        "email": "John@example.cor",
+        "phone": ""
+      },
+      "confidence": 0.5882352941176471
+    },
+    "processing_time_ms": 1359.555721282959,
+    "output_files": {
+      "debug": "outputs\\debug\\ss.jpg",
+      "corrected": "outputs\\processed\\ss_corrected.jpg",
+      "enhanced": "outputs\\processed\\ss_enhanced.jpg",
+      "json": "outputs\\json\\ss.jpg"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "3cc48091-606b-4af7-99ad-8c04be8ab2be",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -2.97924851512838,
+      "processing_time_ms": 820.8246231079102,
+      "ocr_confidence": 0.95,
+      "image_width": 1435,
+      "image_height": 825,
+      "fields": {
+        "name": "",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:46.120083",
+      "document_id": "3cc48091-606b-4af7-99ad-8c04be8ab2be",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "",
+      "structured_data": {
+        "name": "",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "confidence": 0.95
+    },
+    "processing_time_ms": 820.8246231079102,
+    "output_files": {
+      "debug": "outputs\\debug\\bcc.png",
+      "corrected": "outputs\\processed\\bcc_corrected.png",
+      "enhanced": "outputs\\processed\\bcc_enhanced.png",
+      "json": "outputs\\json\\bcc.png"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "4a2c0a4c-ae76-4eef-810e-038908de7f87",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": 0.30845343735899483,
+      "processing_time_ms": 908.5860252380371,
+      "ocr_confidence": 0.7611111111111112,
+      "image_width": 785,
+      "image_height": 517,
+      "fields": {
+        "name": "a . pain",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:47.030822",
+      "document_id": "4a2c0a4c-ae76-4eef-810e-038908de7f87",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "a . pain\nan / we he 4\npo Reathtionty\na yume yf\nLh ernheao aoe\n",
+      "structured_data": {
+        "name": "a . pain",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "confidence": 0.7611111111111112
+    },
+    "processing_time_ms": 908.5860252380371,
+    "output_files": {
+      "debug": "outputs\\debug\\bccc.png",
+      "corrected": "outputs\\processed\\bccc_corrected.png",
+      "enhanced": "outputs\\processed\\bccc_enhanced.png",
+      "json": "outputs\\json\\bccc.png"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "c83d7bff-7a97-49f0-9d3b-d7d71b9f4002",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": 4.065656571929161,
+      "processing_time_ms": 1030.5554866790771,
+      "ocr_confidence": 0.6572727272727273,
+      "image_width": 417,
+      "image_height": 282,
+      "fields": {
+        "name": "ODENQUEST",
+        "company": "STUDI0 ICONIc",
+        "email": "",
+        "phone": "084567899"
+      },
+      "timestamp": "2026-06-27T10:58:48.062743",
+      "document_id": "c83d7bff-7a97-49f0-9d3b-d7d71b9f4002",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "ODENQUEST\nCreatlveDirectoy .\nA T+4.4084567899\nCc H+1408.456.goxg\n1234MalnSee\nSanta Clara. C495126\nSTUDI0 ICONIc\nProdu Desty fost\nNitstudolconteng\n8 OdenQuast\n",
+      "structured_data": {
+        "name": "ODENQUEST",
+        "company": "STUDI0 ICONIc",
+        "email": "",
+        "phone": "084567899"
+      },
+      "confidence": 0.6572727272727273
+    },
+    "processing_time_ms": 1030.5554866790771,
+    "output_files": {
+      "debug": "outputs\\debug\\bcrv2.png",
+      "corrected": "outputs\\processed\\bcrv2_corrected.png",
+      "enhanced": "outputs\\processed\\bcrv2_enhanced.png",
+      "json": "outputs\\json\\bcrv2.png"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "b5a48275-07df-49ac-ae72-441df590d9d7",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -3.885820075420881,
+      "processing_time_ms": 2664.7520065307617,
+      "ocr_confidence": 0.545,
+      "image_width": 1288,
+      "image_height": 723,
+      "fields": {
+        "name": "PRACTISED 1059",
+        "company": "examplewebsite.com S",
+        "email": "John@examole.com",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:50.729499",
+      "document_id": "b5a48275-07df-49ac-ae72-441df590d9d7",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "PRACTISED 1059\nINTERIORDESIGNER\n123-456-7890 @examplebusiness\nJohn@examole.com @ 6\nexamplewebsite.com S\n",
+      "structured_data": {
+        "name": "PRACTISED 1059",
+        "company": "examplewebsite.com S",
+        "email": "John@examole.com",
+        "phone": ""
+      },
+      "confidence": 0.545
+    },
+    "processing_time_ms": 2664.7520065307617,
+    "output_files": {
+      "debug": "outputs\\debug\\businesscard.png",
+      "corrected": "outputs\\processed\\businesscard_corrected.png",
+      "enhanced": "outputs\\processed\\businesscard_enhanced.png",
+      "json": "outputs\\json\\businesscard.png"
+    }
+  },
+  {
+    "success": true,
+    "document_id": "e1deec58-43fe-4294-860a-d41f5e401d6b",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": 0.0,
+      "processing_time_ms": 2063.478946685791,
+      "ocr_confidence": 0.843529411764706,
+      "image_width": 745,
+      "image_height": 520,
+      "fields": {
+        "name": "@AAe fay fattarlavaraits if falar aif Arama",
+        "company": "POCDUCeCECoS8eGueaeauses",
+        "email": "",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:52.797166",
+      "document_id": "e1deec58-43fe-4294-860a-d41f5e401d6b",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "@AAe fay fattarlavaraits if falar aif Arama\nPOCDUCeCECoS8eGueaeauses\nss\nCOLLEGEDIPLOMA\nPAN aN\ne 6cofegetgn ey\ne\n@ Diplomaispresentedto @\nBasilBennett\ne @\naN + iN\ni Forsuccessful.completionoftheCollegeofArt. GS\niN @\n5\ny i\nGu fe\nH1@_tenravn Coniido1012024 AsenPatice\neh CollegeDirector CertficateNOsXXXXXXKKX AsslstantDirector AN\nie rod\nVBAaAaefarfailaifailatartarlartartertach ey\nARIGNAIRNCNOTOAAATAIAACALALALAUATATAAAAALALAAL\na UEOOOCEOEROSEeRROOCUnoice\n",
+      "structured_data": {
+        "name": "@AAe fay fattarlavaraits if falar aif Arama",
+        "company": "POCDUCeCECoS8eGueaeauses",
+        "email": "",
+        "phone": ""
+      },
+      "confidence": 0.843529411764706
+    },
+    "processing_time_ms": 2063.478946685791,
+    "output_files": {
+      "debug": "outputs\\debug\\diploma.png",
+      "corrected": "outputs\\processed\\diploma_corrected.png",
+      "enhanced": "outputs\\processed\\diploma_enhanced.png",
+      "json": "outputs\\json\\diploma.png"
+    }
+  },
+  {
+    "success": false,
+    "error": "No document detected",
+    "processing_time_ms": 178.8015365600586
+  },
+  {
+    "success": true,
+    "document_id": "a846e37a-d109-4d60-aa7f-f7a616451bb4",
+    "metadata": {
+      "document_detected": true,
+      "rotation_angle": -5.710593137499642,
+      "processing_time_ms": 1199.824571609497,
+      "ocr_confidence": 0.57,
+      "image_width": 370,
+      "image_height": 340,
+      "fields": {
+        "name": "Ue",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "timestamp": "2026-06-27T10:58:54.177641",
+      "document_id": "a846e37a-d109-4d60-aa7f-f7a616451bb4",
+      "document_type": "business_card"
+    },
+    "ocr_result": {
+      "raw_text": "Ue\nReallstateAoa\n",
+      "structured_data": {
+        "name": "Ue",
+        "company": "",
+        "email": "",
+        "phone": ""
+      },
+      "confidence": 0.57
+    },
+    "processing_time_ms": 1199.824571609497,
+    "output_files": {
+      "debug": "outputs\\debug\\sample-bc.png",
+      "corrected": "outputs\\processed\\sample-bc_corrected.png",
+      "enhanced": "outputs\\processed\\sample-bc_enhanced.png",
+      "json": "outputs\\json\\sample-bc.png"
+    }
+  }
+]

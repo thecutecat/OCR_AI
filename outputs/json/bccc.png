@@ -1,7 +1,7 @@
 {
   "document_detected": true,
   "rotation_angle": 0.30845343735899483,
-  "processing_time_ms": 797.0280647277832,
+  "processing_time_ms": 908.5860252380371,
   "ocr_confidence": 0.7611111111111112,
   "image_width": 785,
   "image_height": 517,
@@ -11,7 +11,7 @@
     "email": "",
     "phone": ""
   },
-  "timestamp": "2026-06-27T01:38:21.674605",
-  "document_id": "32ea30f5-40cc-493c-af95-98546388ae87",
+  "timestamp": "2026-06-27T10:58:47.030822",
+  "document_id": "4a2c0a4c-ae76-4eef-810e-038908de7f87",
   "document_type": "business_card"
 }

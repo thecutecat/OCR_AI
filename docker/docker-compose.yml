@@ -1,39 +1,95 @@
 version: '3.8'
 
 services:
-  document-scanner:
+  # Main OCR Service
+  ocr-service:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+    image: ocr-ai:latest
+    container_name: ocr-ai-service
     ports:
-      - "8080:8080"
-    volumes:
-      - ../outputs:/app/outputs
-      - ../samples:/app/samples
+      - "8090:8090" # API port
+      - "8080:8080" # Alternative port
     environment:
       - PYTHONUNBUFFERED=1
+      - PORT=8090
+      - HOST=0.0.0.0
       - DB_CONNECTION_STRING=Server=sqlserver;Database=OCR_AI;User Id=sa;Password=YourPassword123!;TrustServerCertificate=true;
+      - TESSERACT_PATH=/usr/bin/tesseract
+      - OCR_LANGUAGE=eng
+      - DOCUMENT_TYPE=business_card
+    volumes:
+      # Mount for persistent output
+      - ../outputs:/app/outputs
+      # Mount for sample images
+      - ../samples:/app/samples
+      # Mount for logs
+      - ../logs:/app/logs
     depends_on:
       - sqlserver
-    command: [ "python", "app/api.py" ]
+      - redis
+    networks:
+      - ocr-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8090/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
+  # SQL Server for metadata storage
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: ocr-sqlserver
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=YourPassword123!
       - MSSQL_PID=Express
+      - MSSQL_LCID=1033
     ports:
       - "1433:1433"
     volumes:
       - sqlserver_data:/var/opt/mssql
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - ocr-network
+    restart: unless-stopped
 
+  # Redis for caching
   redis:
-    image: redis:alpine
+    image: redis:7-alpine
+    container_name: ocr-redis
     ports:
       - "6379:6379"
     volumes:
       - redis_data:/data
+    networks:
+      - ocr-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Optional: Nginx for load balancing (for production)
+  nginx:
+    image: nginx:alpine
+    container_name: ocr-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../outputs:/usr/share/nginx/html/outputs
+    depends_on:
+      - ocr-service
+    networks:
+      - ocr-network
+    restart: unless-stopped
+    profiles:
+      - production
+
+networks:
+  ocr-network:
+    driver: bridge
 
 volumes:
   sqlserver_data:

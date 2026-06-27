@@ -1,0 +1,62 @@
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Outputs (recreated in container)
+outputs/
+debug_output/
+debug_detailed/
+
+# Git
+.git/
+.gitignore
+
+# Docker
+docker/
+*.dockerfile
+
+# Documentation
+*.md
+docs/
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Sample images (optional - you can mount them)
+samples/*.jpg
+samples/*.png
+
+# Environment files
+.env
+.env.local
+
+# Build artifacts
+build/
+dist/
+*.egg-info/

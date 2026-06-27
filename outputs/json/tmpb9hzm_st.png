@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 0.0,
+  "processing_time_ms": 1283.555269241333,
+  "ocr_confidence": 0.843529411764706,
+  "image_width": 745,
+  "image_height": 520,
+  "fields": {
+    "name": "@AAe fay fattarlavaraits if falar aif Arama",
+    "company": "POCDUCeCECoS8eGueaeauses",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-27T11:39:56.168280",
+  "document_id": "749fb321-9992-462f-8ceb-92888cc10e56",
+  "document_type": "business_card"
+}

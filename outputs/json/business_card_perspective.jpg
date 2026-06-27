@@ -1,8 +1,8 @@
 {
   "document_detected": true,
   "rotation_angle": -1.6180945327374552,
-  "processing_time_ms": 1118.3149814605713,
-  "ocr_confidence": 0.86,
+  "processing_time_ms": 903.3501148223877,
+  "ocr_confidence": 0.7572727272727273,
   "image_width": 1200,
   "image_height": 800,
   "fields": {
@@ -11,7 +11,7 @@
     "email": "john.doe@abccorp.com",
     "phone": ""
   },
-  "timestamp": "2026-06-26T18:34:57.974532",
-  "document_id": "a3d953e0-dc44-4ed9-8933-883ac783f0fe",
+  "timestamp": "2026-06-27T10:58:43.935529",
+  "document_id": "1d579d84-b3f0-434f-bf18-45f04e9b552a",
   "document_type": "business_card"
 }

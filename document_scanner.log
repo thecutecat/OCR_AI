@@ -328,3 +328,91 @@
 2026-06-27 01:39:10,755 - main - INFO - Corrected image saved to: outputs\processed\bcrv2_corrected.png
 2026-06-27 01:39:10,987 - main - INFO - Enhanced image saved to: outputs\processed\bcrv2_enhanced.png
 2026-06-27 01:39:11,479 - main - INFO - Successfully processed image in 784.74ms
+2026-06-27 10:58:37,035 - main - INFO - Processing image: ./samples\bcll.jpg
+2026-06-27 10:58:37,159 - main - INFO - Debug image saved to: outputs\debug\bcll.jpg
+2026-06-27 10:58:37,187 - main - INFO - Corrected image saved to: outputs\processed\bcll_corrected.jpg
+2026-06-27 10:58:37,487 - main - INFO - Enhanced image saved to: outputs\processed\bcll_enhanced.jpg
+2026-06-27 10:58:37,973 - main - INFO - Successfully processed image in 959.93ms
+2026-06-27 10:58:37,986 - main - INFO - Processing image: ./samples\bcn.jpg
+2026-06-27 10:58:38,062 - main - INFO - Debug image saved to: outputs\debug\bcn.jpg
+2026-06-27 10:58:38,092 - main - INFO - Corrected image saved to: outputs\processed\bcn_corrected.jpg
+2026-06-27 10:58:38,407 - main - INFO - Enhanced image saved to: outputs\processed\bcn_enhanced.jpg
+2026-06-27 10:58:38,835 - main - INFO - Successfully processed image in 860.29ms
+2026-06-27 10:58:38,851 - main - INFO - Processing image: ./samples\bcnoise.jpg
+2026-06-27 10:58:38,924 - main - INFO - Debug image saved to: outputs\debug\bcnoise.jpg
+2026-06-27 10:58:38,951 - main - INFO - Corrected image saved to: outputs\processed\bcnoise_corrected.jpg
+2026-06-27 10:58:39,241 - main - INFO - Enhanced image saved to: outputs\processed\bcnoise_enhanced.jpg
+2026-06-27 10:58:39,809 - main - INFO - Successfully processed image in 971.77ms
+2026-06-27 10:58:39,825 - main - INFO - Processing image: ./samples\bcr.jpg
+2026-06-27 10:58:39,917 - main - INFO - Debug image saved to: outputs\debug\bcr.jpg
+2026-06-27 10:58:39,937 - main - INFO - Corrected image saved to: outputs\processed\bcr_corrected.jpg
+2026-06-27 10:58:40,234 - main - INFO - Enhanced image saved to: outputs\processed\bcr_enhanced.jpg
+2026-06-27 10:58:40,820 - main - INFO - Successfully processed image in 1009.19ms
+2026-06-27 10:58:40,878 - main - INFO - Processing image: ./samples\businesscard.jpg
+2026-06-27 10:58:41,056 - main - INFO - Debug image saved to: outputs\debug\businesscard.jpg
+2026-06-27 10:58:41,125 - main - INFO - Corrected image saved to: outputs\processed\businesscard_corrected.jpg
+2026-06-27 10:58:41,561 - main - INFO - Enhanced image saved to: outputs\processed\businesscard_enhanced.jpg
+2026-06-27 10:58:43,030 - main - INFO - Successfully processed image in 2207.68ms
+2026-06-27 10:58:43,046 - main - INFO - Processing image: ./samples\business_card_perspective.jpg
+2026-06-27 10:58:43,120 - main - INFO - Debug image saved to: outputs\debug\business_card_perspective.jpg
+2026-06-27 10:58:43,153 - main - INFO - Corrected image saved to: outputs\processed\business_card_perspective_corrected.jpg
+2026-06-27 10:58:43,463 - main - INFO - Enhanced image saved to: outputs\processed\business_card_perspective_enhanced.jpg
+2026-06-27 10:58:43,935 - main - INFO - Successfully processed image in 903.35ms
+2026-06-27 10:58:43,951 - main - INFO - Processing image: ./samples\ss.jpg
+2026-06-27 10:58:44,097 - main - INFO - Debug image saved to: outputs\debug\ss.jpg
+2026-06-27 10:58:44,137 - main - INFO - Corrected image saved to: outputs\processed\ss_corrected.jpg
+2026-06-27 10:58:44,524 - main - INFO - Enhanced image saved to: outputs\processed\ss_enhanced.jpg
+2026-06-27 10:58:45,298 - main - INFO - Successfully processed image in 1359.56ms
+2026-06-27 10:58:45,322 - main - INFO - Processing image: ./samples\bcc.png
+2026-06-27 10:58:45,468 - main - INFO - Debug image saved to: outputs\debug\bcc.png
+2026-06-27 10:58:45,500 - main - INFO - Corrected image saved to: outputs\processed\bcc_corrected.png
+2026-06-27 10:58:45,772 - main - INFO - Enhanced image saved to: outputs\processed\bcc_enhanced.png
+2026-06-27 10:58:46,121 - main - INFO - Successfully processed image in 820.82ms
+2026-06-27 10:58:46,139 - main - INFO - Processing image: ./samples\bccc.png
+2026-06-27 10:58:46,209 - main - INFO - Debug image saved to: outputs\debug\bccc.png
+2026-06-27 10:58:46,250 - main - INFO - Corrected image saved to: outputs\processed\bccc_corrected.png
+2026-06-27 10:58:46,533 - main - INFO - Enhanced image saved to: outputs\processed\bccc_enhanced.png
+2026-06-27 10:58:47,030 - main - INFO - Successfully processed image in 908.59ms
+2026-06-27 10:58:47,043 - main - INFO - Processing image: ./samples\bcrv2.png
+2026-06-27 10:58:47,069 - main - INFO - Debug image saved to: outputs\debug\bcrv2.png
+2026-06-27 10:58:47,100 - main - INFO - Corrected image saved to: outputs\processed\bcrv2_corrected.png
+2026-06-27 10:58:47,407 - main - INFO - Enhanced image saved to: outputs\processed\bcrv2_enhanced.png
+2026-06-27 10:58:48,063 - main - INFO - Successfully processed image in 1030.56ms
+2026-06-27 10:58:48,090 - main - INFO - Processing image: ./samples\businesscard.png
+2026-06-27 10:58:48,297 - main - INFO - Debug image saved to: outputs\debug\businesscard.png
+2026-06-27 10:58:48,393 - main - INFO - Corrected image saved to: outputs\processed\businesscard_corrected.png
+2026-06-27 10:58:49,179 - main - INFO - Enhanced image saved to: outputs\processed\businesscard_enhanced.png
+2026-06-27 10:58:50,730 - main - INFO - Successfully processed image in 2664.75ms
+2026-06-27 10:58:50,756 - main - INFO - Processing image: ./samples\diploma.png
+2026-06-27 10:58:50,968 - main - INFO - Debug image saved to: outputs\debug\diploma.png
+2026-06-27 10:58:51,030 - main - INFO - Corrected image saved to: outputs\processed\diploma_corrected.png
+2026-06-27 10:58:51,543 - main - INFO - Enhanced image saved to: outputs\processed\diploma_enhanced.png
+2026-06-27 10:58:52,798 - main - INFO - Successfully processed image in 2063.48ms
+2026-06-27 10:58:52,820 - main - INFO - Processing image: ./samples\diploma2.png
+2026-06-27 10:58:52,976 - main - WARNING - No document detected in the image
+2026-06-27 10:58:52,993 - main - INFO - Processing image: ./samples\sample-bc.png
+2026-06-27 10:58:53,033 - main - INFO - Debug image saved to: outputs\debug\sample-bc.png
+2026-06-27 10:58:53,081 - main - INFO - Corrected image saved to: outputs\processed\sample-bc_corrected.png
+2026-06-27 10:58:53,542 - main - INFO - Enhanced image saved to: outputs\processed\sample-bc_enhanced.png
+2026-06-27 10:58:54,177 - main - INFO - Successfully processed image in 1199.82ms
+2026-06-27 11:39:33,656 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpfzari2u5.png
+2026-06-27 11:39:33,804 - main - WARNING - No document detected in the image
+2026-06-27 11:39:54,900 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpb9hzm_st.png
+2026-06-27 11:39:55,066 - main - INFO - Debug image saved to: outputs\debug\tmpb9hzm_st.png
+2026-06-27 11:39:55,093 - main - INFO - Corrected image saved to: outputs\processed\tmpb9hzm_st_corrected.png
+2026-06-27 11:39:55,387 - main - INFO - Enhanced image saved to: outputs\processed\tmpb9hzm_st_enhanced.png
+2026-06-27 11:39:56,168 - main - INFO - Successfully processed image in 1283.56ms
+2026-06-27 11:49:03,197 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpsy1hs2zh.png
+2026-06-27 11:49:03,443 - main - WARNING - No document detected in the image
+2026-06-27 11:49:21,469 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmplvufqlc_.png
+2026-06-27 11:49:21,709 - main - WARNING - No document detected in the image
+2026-06-27 11:51:01,670 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpld_evjem.jpg
+2026-06-27 11:51:01,757 - main - INFO - Debug image saved to: outputs\debug\tmpld_evjem.jpg
+2026-06-27 11:51:01,782 - main - INFO - Corrected image saved to: outputs\processed\tmpld_evjem_corrected.jpg
+2026-06-27 11:51:02,084 - main - INFO - Enhanced image saved to: outputs\processed\tmpld_evjem_enhanced.jpg
+2026-06-27 11:51:02,752 - main - INFO - Successfully processed image in 1107.39ms
+2026-06-27 11:55:30,306 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpo582_rph.png
+2026-06-27 11:55:30,609 - main - INFO - Debug image saved to: outputs\debug\tmpo582_rph.png
+2026-06-27 11:55:30,642 - main - INFO - Corrected image saved to: outputs\processed\tmpo582_rph_corrected.png
+2026-06-27 11:55:30,943 - main - INFO - Enhanced image saved to: outputs\processed\tmpo582_rph_enhanced.png
+2026-06-27 11:55:31,423 - main - INFO - Successfully processed image in 1138.30ms

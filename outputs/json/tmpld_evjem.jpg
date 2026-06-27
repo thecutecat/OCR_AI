@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 0.0,
+  "processing_time_ms": 1107.3949337005615,
+  "ocr_confidence": 0.4141935483870968,
+  "image_width": 640,
+  "image_height": 453,
+  "fields": {
+    "name": "Bay Ih sepa ey",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-27T11:51:02.752365",
+  "document_id": "8bee61d6-271a-4dd1-80f2-49874a21137a",
+  "document_type": "business_card"
+}

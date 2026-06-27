@@ -1,17 +1,17 @@
 {
   "document_detected": true,
-  "rotation_angle": 0.14043055093731335,
-  "processing_time_ms": 891.3371562957764,
-  "ocr_confidence": 0.9259999999999999,
+  "rotation_angle": 0.2808594146833859,
+  "processing_time_ms": 1009.1934204101562,
+  "ocr_confidence": 0.946,
   "image_width": 800,
   "image_height": 1200,
   "fields": {
-    "name": "I PcL",
-    "company": "",
+    "name": "+SO3YS oOc",
+    "company": "CO o",
     "email": "",
     "phone": ""
   },
-  "timestamp": "2026-06-26T18:34:54.781261",
-  "document_id": "1260d854-375d-4712-b7b8-bcb82f05f7cf",
+  "timestamp": "2026-06-27T10:58:40.820404",
+  "document_id": "5076c09c-d890-4dbb-b97d-62b499cf7009",
   "document_type": "business_card"
 }

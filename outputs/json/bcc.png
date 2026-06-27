@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": -2.97924851512838,
+  "processing_time_ms": 820.8246231079102,
+  "ocr_confidence": 0.95,
+  "image_width": 1435,
+  "image_height": 825,
+  "fields": {
+    "name": "",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-27T10:58:46.120083",
+  "document_id": "3cc48091-606b-4af7-99ad-8c04be8ab2be",
+  "document_type": "business_card"
+}

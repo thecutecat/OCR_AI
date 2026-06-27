@@ -1,17 +1,17 @@
 {
   "document_detected": true,
-  "rotation_angle": -1.816607923344906,
-  "processing_time_ms": 2071.9008445739746,
-  "ocr_confidence": 0.33649999999999997,
+  "rotation_angle": -8.524766051905864,
+  "processing_time_ms": 2207.6754570007324,
+  "ocr_confidence": 0.7359375,
   "image_width": 1920,
   "image_height": 1080,
   "fields": {
-    "name": "ee",
-    "company": "examplewebsite.com 0",
+    "name": "FASROPLOpePORELTON120ODACentae Wena EA ROE catident pun mht ie",
+    "company": "BSEamh aN My fy contrat eur ini i i a Sips TAN 481",
     "email": "John@example.com",
     "phone": ""
   },
-  "timestamp": "2026-06-26T18:34:56.854162",
-  "document_id": "5254f984-506e-4c06-ae3f-15a738789bb8",
+  "timestamp": "2026-06-27T10:58:43.029079",
+  "document_id": "2103f0f7-6525-4429-98e3-f778612ffc97",
   "document_type": "business_card"
 }

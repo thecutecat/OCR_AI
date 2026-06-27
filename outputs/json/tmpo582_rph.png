@@ -1,0 +1,17 @@
+{
+  "document_detected": true,
+  "rotation_angle": 36.79405946443752,
+  "processing_time_ms": 1138.2958889007568,
+  "ocr_confidence": 0.95,
+  "image_width": 800,
+  "image_height": 1040,
+  "fields": {
+    "name": "iy",
+    "company": "",
+    "email": "",
+    "phone": ""
+  },
+  "timestamp": "2026-06-27T11:55:31.422335",
+  "document_id": "e0edffd9-eecf-4047-8da4-2069b45a4739",
+  "document_type": "business_card"
+}
