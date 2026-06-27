@@ -38,6 +38,8 @@ RUN apt-get install -y \
     cmake \
     wget \
     curl \
+    unixodbc \
+    unixodbc-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
