@@ -1,20 +1,29 @@
-# Base image with Python 3.11
-FROM python:3.11-slim
+# Use Ubuntu base image instead of slim
+FROM ubuntu:22.04
 
-# Set working directory
 WORKDIR /app
 
-# Set environment variables to avoid interactive prompts
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    TZ=Asia/Jakarta \
-    DEBIAN_FRONTEND=noninteractive
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1
 
-# Update package lists and install dependencies in separate steps
-RUN apt-get update --fix-missing
+# Install Python and basic dependencies
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get update
 
-# Install OpenCV dependencies (split into smaller groups)
-RUN apt-get install -y --no-install-recommends \
+# Install Python 3.11
+RUN apt-get install -y \
+    python3.11 \
+    python3.11-dev \
+    python3.11-distutils \
+    python3-pip \
+    && ln -sf /usr/bin/python3.11 /usr/bin/python \
+    && ln -sf /usr/bin/python3.11 /usr/bin/python3
+
+# Install system dependencies
+RUN apt-get install -y \
     libgl1-mesa-glx \
     libglib2.0-0 \
     libsm6 \
@@ -22,20 +31,9 @@ RUN apt-get install -y --no-install-recommends \
     libxrender-dev \
     libgomp1 \
     libpq-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Tesseract OCR
-RUN apt-get update --fix-missing && \
-    apt-get install -y --no-install-recommends \
     tesseract-ocr \
     tesseract-ocr-eng \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install build tools (optional)
-RUN apt-get update --fix-missing && \
-    apt-get install -y --no-install-recommends \
+    tesseract-ocr-ind \
     g++ \
     cmake \
     wget \
@@ -43,31 +41,19 @@ RUN apt-get update --fix-missing && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first (for better caching)
-COPY requirements.txt .
+# Upgrade pip
+RUN python -m pip install --upgrade pip
 
-# Install Python dependencies
+# Copy requirements and install Python packages
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy application
 COPY . .
 
-# Build C++ module (optional)
-WORKDIR /app/cpp_module
-RUN python setup.py build_ext --inplace || echo "C++ module build skipped (optional)"
+# Create output directories
+RUN mkdir -p outputs/debug outputs/processed outputs/json
 
-WORKDIR /app
-
-# Create necessary directories
-RUN mkdir -p outputs/debug outputs/processed outputs/json samples
-
-# Expose ports
 EXPOSE 8090
-EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8090/health || exit 1
-
-# Default command
 CMD ["python", "app/api.py"]
