@@ -14,21 +14,21 @@ def main():
     parser = argparse.ArgumentParser(description='Smart Document Scanner & OCR Service')
     parser.add_argument('--input', required=True, help='Input image file or directory')
     parser.add_argument('--output', default='./outputs', help='Output directory')
-    parser.add_argument('--document-type', default='business_card', 
-                       choices=['business_card', 'id_card', 'receipt'],
-                       help='Type of document to process')
+    parser.add_argument('--document-type', default='auto', 
+                       choices=['auto', 'business_card', 'id_card', 'receipt'],
+                       help='Type of document to process (auto for automatic detection)')
     parser.add_argument('--ocr-language', default='eng', help='OCR language')
     parser.add_argument('--use-database', action='store_true', help='Save results to database')
     parser.add_argument('--db-connection', help='Database connection string')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     parser.add_argument('--debug-dir', default='debug_output', help='Debug output directory')
-    parser.add_argument('--tesseract-path', help='Path to tesseract.exe (e.g., C:\\Program Files\\Tesseract-OCR\\tesseract.exe)')
+    parser.add_argument('--tesseract-path', help='Path to tesseract.exe')
     
     args = parser.parse_args()
     
     # Configuration
     config = {
-        'document_type': args.document_type,
+        'document_type': args.document_type,  # 'auto' by default
         'ocr_language': args.ocr_language,
         'use_database': args.use_database,
         'db_connection_string': args.db_connection,
@@ -42,12 +42,6 @@ def main():
         app = DocumentScannerApp(config)
     except RuntimeError as e:
         print(f"\nERROR: {e}")
-        print("\nPlease install Tesseract OCR:")
-        print("1. Download from: https://github.com/UB-Mannheim/tesseract/wiki")
-        print("2. Install and add to PATH")
-        print("3. Or specify the path with --tesseract-path")
-        print("\nExample:")
-        print('  python app/cli.py --input samples/ss.jpg --tesseract-path "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"')
         sys.exit(1)
     
     # Process input
@@ -56,13 +50,10 @@ def main():
         result = app.process_image(args.input)
         print(json.dumps(result, indent=2))
         
-        # If debug mode, show additional info
-        if args.debug and 'metadata' in result:
-            print(f"\nDebug Info:")
-            print(f"  Document detected: {result['metadata']['document_detected']}")
-            print(f"  Confidence: {result['metadata'].get('ocr_confidence', 0)}")
-            print(f"  Processing time: {result['processing_time_ms']}ms")
-            
+        # Show detected type
+        if result.get('success'):
+            print(f"\n📄 Detected Document Type: {result.get('document_type', 'unknown')}")
+        
     elif os.path.isdir(args.input):
         # Directory - batch processing
         image_extensions = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff']
@@ -76,10 +67,12 @@ def main():
             return
         
         print(f"Found {len(image_files)} images to process")
+        print(f"Document type: {args.document_type} (auto-detection if set to 'auto')")
         
         results = []
         success_count = 0
         fail_count = 0
+        type_counts = {}
         
         for image_file in image_files:
             print(f"\nProcessing: {os.path.basename(image_file)}")
@@ -88,7 +81,9 @@ def main():
             
             if result.get('success', False):
                 success_count += 1
-                print(f"  ✓ Success")
+                doc_type = result.get('document_type', 'unknown')
+                type_counts[doc_type] = type_counts.get(doc_type, 0) + 1
+                print(f"  ✓ Success (Type: {doc_type})")
             else:
                 fail_count += 1
                 print(f"  ✗ Failed: {result.get('error', 'Unknown error')}")
@@ -100,6 +95,11 @@ def main():
         print(f"  Successful: {success_count}")
         print(f"  Failed: {fail_count}")
         print(f"  Success rate: {success_count/len(image_files)*100:.1f}%")
+        
+        if type_counts:
+            print(f"\n  Document Types Detected:")
+            for doc_type, count in type_counts.items():
+                print(f"    {doc_type}: {count}")
         
         # Save batch results
         output_dir = Path(args.output) / 'batch_results'

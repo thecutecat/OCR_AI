@@ -18,8 +18,12 @@ class MetadataGenerator:
         """
         Generate comprehensive metadata for the processed document.
         """
+        # Get detected document type from OCR result
+        detected_type = ocr_result.get('detected_document_type', 'unknown')
+        
         metadata = {
             'document_detected': detection_result.detected,
+            'document_type': detected_type,  # Use detected type
             'rotation_angle': detection_result.rotation_angle if detection_result.detected else 0.0,
             'processing_time_ms': processing_time,
             'ocr_confidence': ocr_result.get('confidence', 0.0),
@@ -28,7 +32,6 @@ class MetadataGenerator:
             'fields': ocr_result.get('structured_data', {}),
             'timestamp': datetime.now().isoformat(),
             'document_id': str(uuid.uuid4()),
-            'document_type': 'business_card'  # This should be configurable
         }
         
         return metadata

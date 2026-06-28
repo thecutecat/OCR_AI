@@ -30,19 +30,23 @@ app.add_middleware(
 
 # Configuration
 config = {
-    'document_type': 'business_card',
+    'document_type': 'auto',  # Auto-detect by default
     'ocr_language': 'eng',
     'use_database': False,
     'tesseract_path': None
 }
 
-# Initialize scanner app
+# Initialize scanner app with try-catch
 try:
     scanner_app = DocumentScannerApp(config)
     print("✓ Document Scanner initialized successfully")
+    print(f"✓ Document type: {config['document_type']} (auto-detection enabled)")
 except RuntimeError as e:
     print(f"✗ Error initializing OCR: {e}")
     print("Please install Tesseract or specify the path in config")
+    sys.exit(1)
+except Exception as e:
+    print(f"✗ Unexpected error: {e}")
     sys.exit(1)
 
 @app.get("/")
@@ -78,6 +82,8 @@ async def root():
         <div class="info-box">
             <strong>💡 Tip:</strong> Works best with clear photos of documents. 
             Supports both bordered documents and borderless images with text.
+            <br>
+            <strong>🔍 Auto-Detection:</strong> The system automatically detects document type (Business Card, ID Card, or Receipt).
         </div>
         
         <div class="endpoints">
@@ -86,6 +92,7 @@ async def root():
                 <li><code>POST /process</code> - Upload and process document</li>
                 <li><code>GET /health</code> - Health check</li>
                 <li><code>GET /docs</code> - Interactive API documentation</li>
+                <li><code>GET /supported-types</code> - Supported document types</li>
             </ul>
         </div>
         
@@ -141,6 +148,11 @@ async def root():
                         result.style.display = 'block';
                         resultContent.textContent = JSON.stringify(data, null, 2);
                         
+                        // Show detected type
+                        if (data.document_type) {
+                            imagePreview.innerHTML = `<p><strong>Detected Type:</strong> ${data.document_type}</p>`;
+                        }
+                        
                         if (data.ocr_result && data.ocr_result.structured_data) {
                             const fields = data.ocr_result.structured_data;
                             let html = '<h4>Extracted Information:</h4><ul>';
@@ -155,7 +167,7 @@ async def root():
                             if (!hasFields) {
                                 html = '<p>No structured fields were extracted. Raw text is shown below.</p>';
                             }
-                            imagePreview.innerHTML = html;
+                            imagePreview.innerHTML += html;
                         }
                         
                         if (data.metadata && data.metadata.ocr_confidence) {
@@ -167,7 +179,7 @@ async def root():
                         }
                     } else {
                         status.className = 'status error';
-                        const errorMsg = data.error || 'Unknown error';
+                        const errorMsg = data.error || data.detail || 'Unknown error';
                         status.textContent = '❌ Error: ' + errorMsg;
                         result.style.display = 'block';
                         resultContent.textContent = JSON.stringify(data, null, 2);
@@ -237,19 +249,16 @@ async def process_document(file: UploadFile = File(...)):
         
         if not result.get('success', False):
             error_msg = result.get('error', 'Processing failed')
-            detail_msg = result.get('debug_info', {})
             raise HTTPException(
                 status_code=400, 
-                detail={
-                    "message": error_msg,
-                    "debug_info": detail_msg
-                }
+                detail=error_msg
             )
         
         # Add filename to result
         result['filename'] = file.filename
         
         print(f"✓ Processing complete for: {file.filename}")
+        print(f"  Document type: {result.get('document_type', 'unknown')}")
         
         return JSONResponse(content=result)
     
@@ -259,10 +268,7 @@ async def process_document(file: UploadFile = File(...)):
         print(f"✗ Error processing {file.filename}: {e}")
         raise HTTPException(
             status_code=500, 
-            detail={
-                "message": f"Internal server error: {str(e)}",
-                "filename": file.filename
-            }
+            detail=f"Internal server error: {str(e)}"
         )
 
 @app.get("/health")
@@ -271,7 +277,23 @@ async def health_check():
     return {
         "status": "healthy", 
         "service": "Smart Document Scanner & OCR",
-        "timestamp": datetime.now().isoformat()
+        "timestamp": datetime.now().isoformat(),
+        "document_type": config.get('document_type', 'auto')
+    }
+
+@app.get("/supported-types")
+async def supported_types():
+    """Get list of supported document types."""
+    return {
+        "supported_types": [
+            {"type": "auto", "description": "Automatic detection based on content"},
+            {"type": "business_card", "description": "Business card extraction"},
+            {"type": "id_card", "description": "ID Card extraction"},
+            {"type": "receipt", "description": "Receipt extraction"}
+        ],
+        "current_config": {
+            "document_type": config.get('document_type', 'auto')
+        }
     }
 
 @app.get("/status")
@@ -282,8 +304,8 @@ async def service_status():
         "version": "1.0.0",
         "status": "running",
         "config": {
-            "document_type": config.get('document_type'),
-            "ocr_language": config.get('ocr_language'),
+            "document_type": config.get('document_type', 'auto'),
+            "ocr_language": config.get('ocr_language', 'eng'),
             "tesseract_path": config.get('tesseract_path')
         }
     }
@@ -300,6 +322,9 @@ if __name__ == "__main__":
     print(f"API Documentation: http://{host}:{port}/docs")
     print(f"Web Interface: http://{host}:{port}/")
     print(f"Health Check: http://{host}:{port}/health")
+    print(f"Supported Types: http://{host}:{port}/supported-types")
+    print("=" * 60)
+    print(f"Document Type: {config.get('document_type', 'auto')} (auto-detection enabled)")
     print("=" * 60)
     
     uvicorn.run(

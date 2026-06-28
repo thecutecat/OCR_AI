@@ -17,21 +17,27 @@ from database import DatabaseManager
 class DocumentScannerApp:
     def __init__(self, config: Dict[str, Any]):
         self.config = config
+        
+        # Setup logging FIRST (before anything else)
+        self._setup_logging()
+        
+        # Now initialize components
         self.scanner = DocumentScanner()
         self.enhancer = ImageEnhancer()
         
-        # Initialize OCR with Tesseract path from config
+        # Initialize OCR with auto-detection
         tesseract_path = config.get('tesseract_path')
+        document_type = config.get('document_type', 'auto')  # Default to 'auto'
+        
         try:
             self.ocr = OCREngine(
                 language=config.get('ocr_language', 'eng'),
-                document_type=config.get('document_type', 'business_card'),
+                document_type=document_type,  # Pass 'auto' or specific type
                 tesseract_path=tesseract_path
             )
+            self.logger.info(f"OCR initialized with document_type: {document_type}")
         except RuntimeError as e:
             self.logger.error(f"OCR initialization failed: {e}")
-            self.logger.error("Please install Tesseract OCR and make sure it's in your PATH")
-            self.logger.error("Download from: https://github.com/UB-Mannheim/tesseract/wiki")
             raise
         
         self.metadata_generator = MetadataGenerator()
@@ -41,13 +47,11 @@ class DocumentScannerApp:
         if config.get('use_database', False):
             self.db = DatabaseManager(config.get('db_connection_string', ''))
         
-        # Setup logging
-        self._setup_logging()
-        
         # Create output directories
         self._create_directories()
     
     def _setup_logging(self):
+        """Setup logging configuration."""
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -57,6 +61,7 @@ class DocumentScannerApp:
             ]
         )
         self.logger = logging.getLogger(__name__)
+        self.logger.info("Logging initialized")
     
     def _create_directories(self):
         """Create necessary output directories."""
@@ -89,7 +94,7 @@ class DocumentScannerApp:
                 self.logger.warning("No document detected in the image")
                 return {
                     'success': False,
-                    'error': 'No document detected. The image may not contain a clear document or the document is too blurry. Please ensure the document is clearly visible.',
+                    'error': 'No document detected. The image may not contain a clear document.',
                     'processing_time_ms': (time.time() - start_time) * 1000,
                     'debug_info': detection_result.debug_info
                 }
@@ -110,9 +115,8 @@ class DocumentScannerApp:
                 self.logger.error(f"Perspective correction failed: {e}")
                 return {
                     'success': False,
-                    'error': f'Perspective correction failed: {str(e)}. The detected corners may be invalid.',
-                    'processing_time_ms': (time.time() - start_time) * 1000,
-                    'debug_info': detection_result.debug_info
+                    'error': f'Perspective correction failed: {str(e)}',
+                    'processing_time_ms': (time.time() - start_time) * 1000
                 }
             
             # Step 3: Image Enhancement
@@ -126,8 +130,7 @@ class DocumentScannerApp:
                 return {
                     'success': False,
                     'error': f'Image enhancement failed: {str(e)}',
-                    'processing_time_ms': (time.time() - start_time) * 1000,
-                    'debug_info': detection_result.debug_info
+                    'processing_time_ms': (time.time() - start_time) * 1000
                 }
             
             # Step 4: OCR Extraction
@@ -139,13 +142,17 @@ class DocumentScannerApp:
                     enhanced_gray = enhanced_image
                 
                 ocr_result = self.ocr.extract_text(enhanced_gray)
+                
+                # Get detected document type
+                detected_type = ocr_result.get('detected_document_type', 'unknown')
+                self.logger.info(f"Detected document type: {detected_type}")
+                
             except Exception as e:
                 self.logger.error(f"OCR extraction failed: {e}")
                 return {
                     'success': False,
-                    'error': f'OCR extraction failed: {str(e)}. Please ensure Tesseract is installed.',
-                    'processing_time_ms': (time.time() - start_time) * 1000,
-                    'debug_info': detection_result.debug_info
+                    'error': f'OCR extraction failed: {str(e)}',
+                    'processing_time_ms': (time.time() - start_time) * 1000
                 }
             
             # Step 5: Generate Metadata
@@ -154,13 +161,14 @@ class DocumentScannerApp:
                 metadata = self.metadata_generator.generate_metadata(
                     image, detection_result, ocr_result, processing_time
                 )
+                # Add detected document type to metadata
+                metadata['document_type'] = detected_type
             except Exception as e:
                 self.logger.error(f"Metadata generation failed: {e}")
                 return {
                     'success': False,
                     'error': f'Metadata generation failed: {str(e)}',
-                    'processing_time_ms': (time.time() - start_time) * 1000,
-                    'debug_info': detection_result.debug_info
+                    'processing_time_ms': (time.time() - start_time) * 1000
                 }
             
             # Step 6: Save JSON output
@@ -169,7 +177,6 @@ class DocumentScannerApp:
                 self.metadata_generator.save_metadata(metadata, json_path)
             except Exception as e:
                 self.logger.error(f"JSON save failed: {e}")
-                # Continue even if JSON save fails
             
             # Step 7: Save to database if configured
             if self.db:
@@ -177,7 +184,7 @@ class DocumentScannerApp:
                     document_id = metadata.get('document_id', '')
                     self.db.save_document(
                         document_id=document_id,
-                        document_type=metadata.get('document_type', ''),
+                        document_type=detected_type,
                         image_path=image_path,
                         processed_image_path=enhanced_path,
                         metadata=metadata,
@@ -192,11 +199,11 @@ class DocumentScannerApp:
                     )
                 except Exception as e:
                     self.logger.error(f"Database save failed: {e}")
-                    # Continue even if database save fails
             
             result = {
                 'success': True,
                 'document_id': metadata.get('document_id'),
+                'document_type': detected_type,  # Add detected type to output
                 'metadata': metadata,
                 'ocr_result': ocr_result,
                 'processing_time_ms': processing_time,
