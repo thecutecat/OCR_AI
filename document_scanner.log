@@ -447,3 +447,13 @@
 2026-06-29 00:18:33,062 - main - INFO - Successfully processed image in 2707.34ms
 2026-06-29 00:24:17,715 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpcbicokkx.jpeg
 2026-06-29 00:24:18,320 - main - WARNING - No document detected in the image
+2026-06-29 00:34:18,821 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpy0a4lrdf.png
+2026-06-29 00:34:18,846 - main - INFO - Debug image saved to: outputs\debug\tmpy0a4lrdf.png
+2026-06-29 00:34:18,873 - main - INFO - Corrected image saved to: outputs\processed\tmpy0a4lrdf_corrected.png
+2026-06-29 00:34:19,170 - main - INFO - Enhanced image saved to: outputs\processed\tmpy0a4lrdf_enhanced.png
+2026-06-29 00:34:19,615 - main - INFO - Successfully processed image in 808.68ms
+2026-06-29 00:34:46,978 - main - INFO - Processing image: C:\Users\aisal\AppData\Local\Temp\tmpqsw3nkta.png
+2026-06-29 00:34:47,261 - main - INFO - Debug image saved to: outputs\debug\tmpqsw3nkta.png
+2026-06-29 00:34:47,341 - main - INFO - Corrected image saved to: outputs\processed\tmpqsw3nkta_corrected.png
+2026-06-29 00:34:48,633 - main - INFO - Enhanced image saved to: outputs\processed\tmpqsw3nkta_enhanced.png
+2026-06-29 00:34:49,388 - main - INFO - Successfully processed image in 2434.38ms
