@@ -33,7 +33,7 @@ config = {
     'document_type': 'business_card',
     'ocr_language': 'eng',
     'use_database': False,
-    'tesseract_path': None  # Update this if needed
+    'tesseract_path': None
 }
 
 # Initialize scanner app
@@ -68,11 +68,17 @@ async def root():
             .loading { background: #fff3cd; color: #856404; }
             .endpoints { background: #e9ecef; padding: 15px; border-radius: 5px; margin: 10px 0; }
             .endpoints code { background: #fff; padding: 2px 5px; border-radius: 3px; }
+            .info-box { background: #d1ecf1; color: #0c5460; padding: 10px; border-radius: 5px; margin: 10px 0; }
         </style>
     </head>
     <body>
         <h1>📄 Smart Document Scanner & OCR</h1>
         <p>Upload a document image for scanning and text extraction.</p>
+        
+        <div class="info-box">
+            <strong>💡 Tip:</strong> Works best with clear photos of documents. 
+            Supports both bordered documents and borderless images with text.
+        </div>
         
         <div class="endpoints">
             <h3>API Endpoints:</h3>
@@ -113,7 +119,6 @@ async def root():
                 const resultContent = document.getElementById('resultContent');
                 const imagePreview = document.getElementById('imagePreview');
                 
-                // Show loading status
                 status.style.display = 'block';
                 status.className = 'status loading';
                 status.textContent = '⏳ Processing document... Please wait.';
@@ -131,35 +136,39 @@ async def root():
                     const data = await response.json();
                     
                     if (response.ok && data.success) {
-                        // Show success
                         status.className = 'status success';
                         status.textContent = '✅ Document processed successfully!';
-                        
-                        // Show result
                         result.style.display = 'block';
                         resultContent.textContent = JSON.stringify(data, null, 2);
                         
-                        // Show extracted text
                         if (data.ocr_result && data.ocr_result.structured_data) {
                             const fields = data.ocr_result.structured_data;
                             let html = '<h4>Extracted Information:</h4><ul>';
+                            let hasFields = false;
                             for (const [key, value] of Object.entries(fields)) {
                                 if (value) {
                                     html += `<li><strong>${key}:</strong> ${value}</li>`;
+                                    hasFields = true;
                                 }
                             }
                             html += '</ul>';
+                            if (!hasFields) {
+                                html = '<p>No structured fields were extracted. Raw text is shown below.</p>';
+                            }
                             imagePreview.innerHTML = html;
                         }
                         
-                        // Show confidence
                         if (data.metadata && data.metadata.ocr_confidence) {
                             imagePreview.innerHTML += `<p><strong>Confidence:</strong> ${(data.metadata.ocr_confidence * 100).toFixed(1)}%</p>`;
                         }
+                        
+                        if (data.ocr_result && data.ocr_result.raw_text) {
+                            imagePreview.innerHTML += `<h4>Raw Text:</h4><pre>${data.ocr_result.raw_text}</pre>`;
+                        }
                     } else {
-                        // Show error
                         status.className = 'status error';
-                        status.textContent = '❌ Error: ' + (data.error || 'Unknown error');
+                        const errorMsg = data.error || 'Unknown error';
+                        status.textContent = '❌ Error: ' + errorMsg;
                         result.style.display = 'block';
                         resultContent.textContent = JSON.stringify(data, null, 2);
                     }
@@ -169,7 +178,6 @@ async def root():
                 }
             }
             
-            // Auto-upload when file is selected
             document.getElementById('fileInput').addEventListener('change', function() {
                 if (this.files.length > 0) {
                     uploadFile();
@@ -200,12 +208,19 @@ async def process_document(file: UploadFile = File(...)):
         if file_extension not in allowed_extensions:
             raise HTTPException(
                 status_code=400, 
-                detail=f"Unsupported file type. Allowed: {', '.join(allowed_extensions)}"
+                detail=f"Unsupported file type: {file_extension}. Allowed: {', '.join(allowed_extensions)}"
+            )
+        
+        # Validate file size (10MB limit)
+        content = await file.read()
+        if len(content) > 10 * 1024 * 1024:  # 10MB
+            raise HTTPException(
+                status_code=400,
+                detail="File too large. Maximum size is 10MB."
             )
         
         # Save uploaded file temporarily
         with tempfile.NamedTemporaryFile(delete=False, suffix=file_extension) as tmp_file:
-            content = await file.read()
             tmp_file.write(content)
             tmp_file_path = tmp_file.name
         
@@ -215,12 +230,20 @@ async def process_document(file: UploadFile = File(...)):
         result = scanner_app.process_image(tmp_file_path)
         
         # Clean up temporary file
-        os.unlink(tmp_file_path)
+        try:
+            os.unlink(tmp_file_path)
+        except:
+            pass
         
         if not result.get('success', False):
+            error_msg = result.get('error', 'Processing failed')
+            detail_msg = result.get('debug_info', {})
             raise HTTPException(
                 status_code=400, 
-                detail=result.get('error', 'Processing failed')
+                detail={
+                    "message": error_msg,
+                    "debug_info": detail_msg
+                }
             )
         
         # Add filename to result
@@ -234,7 +257,13 @@ async def process_document(file: UploadFile = File(...)):
         raise
     except Exception as e:
         print(f"✗ Error processing {file.filename}: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "message": f"Internal server error: {str(e)}",
+                "filename": file.filename
+            }
+        )
 
 @app.get("/health")
 async def health_check():
