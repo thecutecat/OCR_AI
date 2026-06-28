@@ -53,9 +53,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application
 COPY . .
 
-# Why create output directories each deploy?
+# Wh
 RUN mkdir -p outputs/debug outputs/processed outputs/json
 
+#this is default port to app
 EXPOSE 8090
 
 CMD ["python", "app/api.py"]
