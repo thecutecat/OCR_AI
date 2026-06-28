@@ -53,7 +53,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application
 COPY . .
 
-# Create output directories
+# Why create output directories each deploy?
 RUN mkdir -p outputs/debug outputs/processed outputs/json
 
 EXPOSE 8090
